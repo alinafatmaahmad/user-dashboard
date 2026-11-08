@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR: items change depending on login status -->
+  <nav class="navbar">
+    <h1 class="logo">UserDash</h1>
+    <div class="nav-links">
+      <span id="welcome-text" class="hidden"></span>
+      <a href="#" id="nav-dashboard" class="hidden">Dashboard</a>
+      <a href="#" id="nav-login">Login</a>
+      <a href="#" id="nav-logout" class="hidden">Logout</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- LOGIN PAGE -->
+    <section id="login-view" class="card login-card">
+      <h2>Login</h2>
+      <p class="hint">Demo account: username <b>admin</b>, password <b>1234</b></p>
+      <form id="login-form">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="admin" required />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="1234" required />
+        <p id="login-error" class="error"></p>
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </section>
+
+    <!-- DASHBOARD PAGE -->
+    <section id="dashboard-view" class="hidden">
+
+      <div class="stats">
+        <div class="card stat"><span id="total-count">0</span> Total users</div>
+        <div class="card stat"><span id="shown-count">0</span> Showing now</div>
+      </div>
+
+      <div class="card">
+        <!-- Search + Filter + Add button -->
+        <div class="toolbar">
+          <input type="text" id="search" placeholder="Search by name or email..." />
+          <select id="city-filter">
+            <option value="all">All cities</option>
+          </select>
+          <button id="add-btn" class="btn">+ Add User</button>
+        </div>
+
+        <p id="status" class="hint"></p>
+
+        <!-- Table (scrolls sideways on small screens) -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Company</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button id="prev-btn" class="btn small">Previous</button>
+          <span id="page-info"></span>
+          <button id="next-btn" class="btn small">Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- POPUP FORM for Add / Edit -->
+  <div id="modal" class="modal hidden">
+    <form id="user-form" class="card modal-box">
+      <h2 id="modal-title">Add User</h2>
+      <label>Name</label>
+      <input type="text" id="f-name" required />
+      <label>Email</label>
+      <input type="email" id="f-email" required />
+      <label>City</label>
+      <input type="text" id="f-city" required />
+      <label>Company</label>
+      <input type="text" id="f-company" required />
+      <div class="modal-buttons">
+        <button type="button" id="cancel-btn" class="btn gray">Cancel</button>
+        <button type="submit" class="btn">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

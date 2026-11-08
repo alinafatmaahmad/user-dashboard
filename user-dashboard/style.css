@@ -1,0 +1,115 @@
+/* ---------- Basic setup ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f4;
+  color: #1f2d2b;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;          /* wraps on small screens */
+  gap: 10px;
+  padding: 14px 24px;
+  background: #0f5c4d;
+  color: white;
+}
+.logo { margin: 0; font-size: 22px; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+.nav-links a:hover { text-decoration: underline; }
+
+/* ---------- Layout ---------- */
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #d5dedb;
+  margin-bottom: 16px;
+}
+
+/* ---------- Forms & buttons ---------- */
+label { display: block; margin: 12px 0 4px; font-weight: bold; }
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b9c6c2;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.btn {
+  background: #0f5c4d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.btn:hover { background: #0b4136; }
+.btn.gray { background: #7b8a86; }
+.btn.red { background: #b3392f; }
+.btn.small { padding: 6px 12px; margin: 0; font-size: 14px; }
+.btn:disabled { background: #b9c6c2; cursor: not-allowed; }
+
+.login-card { max-width: 380px; margin: 40px auto; }
+.hint { color: #5c6b67; font-size: 14px; }
+.error { color: #b3392f; min-height: 18px; }
+
+/* ---------- Stats ---------- */
+.stats { display: flex; gap: 16px; }
+.stat { flex: 1; text-align: center; }
+.stat span { display: block; font-size: 30px; font-weight: bold; color: #0f5c4d; }
+
+/* ---------- Toolbar ---------- */
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; }
+.toolbar input { flex: 2; min-width: 180px; }
+.toolbar select { flex: 1; min-width: 140px; }
+.toolbar .btn { margin-top: 0; }
+
+/* ---------- Table ---------- */
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e3eae8; }
+th { background: #eaf1ef; }
+td .btn { margin: 0 4px 0 0; }
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* ---------- Popup (modal) ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+.modal-box { width: 100%; max-width: 420px; margin: 0; }
+.modal-buttons { display: flex; justify-content: flex-end; gap: 10px; }
+
+/* ---------- Mobile screens ---------- */
+@media (max-width: 600px) {
+  .stats { flex-direction: column; }
+  .navbar { justify-content: center; }
+}
